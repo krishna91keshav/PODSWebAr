@@ -1,0 +1,88 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>PODS Container AR</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/images/logos/PODS_favicon.png"
+    />
+
+    <link rel="stylesheet" type="text/css" href="css/main-menu.css" />
+    <link rel="stylesheet" type="text/css" href="css/instructions.css" />
+    <link rel="stylesheet" type="text/css" href="css/desktop-screen.css" />
+    <link rel="stylesheet" type="text/css" href="css/landing-screen.css" />
+
+    <script src="//cdn.8thwall.com/web/aframe/8frame-1.3.0.min.js"></script>
+    <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
+    <script src="//cdn.8thwall.com/web/landing-page/landing-page.js"></script>
+    <script src="//cdn.8thwall.com/web/coaching-overlay/coaching-overlay.js"></script>
+
+    <!-- 8thWall Web - app key -->
+    <script
+      async
+      src="//apps.8thwall.com/xrweb?appKey=v94Otybfu3V8Bgj5eUzuguouIPeDlG3igtnWf0Xarvd0nfKMqWXVRay2UUq2MgaDccj8th"
+    ></script>
+
+    <!-- Other external scripts and meta tags. -->
+    <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r137/examples/js/renderers/CSS2DRenderer.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <!-- desktop-screen holds the desktop version of the page -->
+    <div id="desktop-screen"></div>
+
+    <!-- mobile-screen holds the A-Frame component -->
+    <div id="mobile_screen" style="width: 100%"></div>
+
+    <!-- landing container holds the launch screen -->
+    <div class="landing-container">
+      <img
+        src="./assets/images/landingPageImages/image-mobile-logo.png"
+        style="width: 80vw; margin: 10vh"
+      />
+
+      <div class="landing-sub-container">
+        <span class="landing-page-mobile-text" style="margin-top: 15vh"
+          >Try out PODS storage<br />containers in your space before<br />you
+          rent them</span
+        >
+        <button
+          id="start-button"
+          class="landing-button"
+          style="margin-top: 3vh"
+        >
+          LETS GET STARTED
+        </button>
+        <span class="landing-page-mobile-subtext"
+          >Try it outdoor for better Experience</span
+        >
+        <img
+          src="./assets/images/landingPageImages/image-mobile-footer.png"
+          style="width: 100%"
+        />
+        <img
+          src="./assets/images/landingPageImages/image-mobile-8thwall-logo.png"
+          style="width: 35vw"
+        />
+      </div>
+    </div>
+  </body>
+
+  <script src="scripts/app.js"></script>
+  <script src="scripts/model-opacity.js"></script>
+  <script src="scripts/device-check.js"></script>
+  <script src="scripts/compatibility-check.js"></script>
+  <script src="scripts/splash-screen.js"></script>
+  <script src="scripts/screenshot-manager.js"></script>
+  <script src="scripts/menu-manager.js"></script>
+</html>

@@ -1,0 +1,135 @@
+<!-- <div class="screenMenu">
+    <div class="screenbar">
+      <button id="8FT_Button" class="screenbutton2">
+        <img style="height:80px; width:96px;" src="./assets/images/menuImages/icon_8ft_Container.png">
+        <div class="instruction-popup-text">8 Foot</div>
+        <div class="instruction-popup-subtext">Small</div>
+        </img>
+      </button>
+      <button id="12FT_Button" class="screenbutton">12FT</button>
+      <button id="16FT_Button" class="screenbutton">16FT</button>
+    </div>
+</div> -->
+  
+<div id="restart_Button" class="topRightPosition hidden">
+  <button class="screenbutton">
+  <img style="height:50%; width:50%;" src="./assets/images/menuImages/icon_reset.png"></img>
+  </button>
+</div>
+
+<div id="container-menu" class="screenMenu hidden">
+<div class="screenbar2">
+  <button id="8FT_Button" class="screenbutton2">
+    <img class="containerImage" src="./assets/images/menuImages/icon_8ft_Container.png"/>
+    <span class="screenbuttontext">8 Foot</span>
+    <span class="screenbuttontext" style="font-size: 3vw; font-weight: 400; opacity: 0.7">Small</span>
+  </button>
+  <button id="12FT_Button" class="screenbutton2">
+    <img class="containerImage" src="./assets/images/menuImages/icon_12ft_Container.png"/>
+    <span class="screenbuttontext">12 Foot</span>
+    <span class="screenbuttontext" style="font-size: 3vw; font-weight: 400; opacity: 0.7">Medium</span>
+  </button>
+  <button id="16FT_Button" class="screenbutton2">
+    <img class="containerImage" src="./assets/images/menuImages/icon_16ft_Container.png"/>
+    <span class="screenbuttontext">16 Foot</span>
+    <span class="screenbuttontext" style="font-size: 3vw; font-weight: 400; opacity: 0.7;">Large</span>
+  </button>
+</div>
+</div>
+
+
+<div id="mini-menu" class="screenMenu2 hidden">
+  <button id="option-button" class="screenbutton" onclick="hide('mini-menu');show('options-menu');">
+    <img style="height:50%; width:50%;" src="./assets/images/menuImages/icon_menu.png"></img>
+  </button>
+  <button class="buybutton"><span onclick="openExternalScreen()">BOOK NOW</span></button>
+</div>
+
+<div id="options-menu" class="screenMenu hidden" style="height: 30%;">
+  <div class="screenbar3 screenMenu3">
+    <button class="closeButton topLeftPosition" style="left: 4vw; top: 4vw;" onclick="hide('options-menu');show('mini-menu');">
+      <img style="height:50%; width:50%;" src="./assets/images/menuImages/icon_back.png"></img>
+    </button>
+    <button class="closeButton topRightPosition" style="right: 4vw; top: 4vw;" onclick="shareLink()">
+      <img style="height:50%; width:50%;" src="./assets/images/menuImages/icon_share.png"></img>
+    </button>
+    <span id="submenuHeader" class="instruction-popup-text">More Options</span>
+   
+        <button class="submenuButton" onclick="show('container-menu');hide('options-menu');">
+          <img src="./assets/images/menuImages/icon_changeContainer.png"></img>
+          <span>Change Storage</span>
+        </button>
+        <button id="podzilla-button" class="submenuButton" style="background: rgba(255, 255, 255, 0.10);">
+          <img style="opacity: 50%;" src="./assets/images/menuImages/icon_visibility.png"></img>
+          <span style="opacity: 50%;">Show Podzilla</span>
+          </button>
+        <button id="screenshot-button" class="submenuButton">
+          <img src="./assets/images/menuImages/icon_screenshot.png"></img>
+          <span>Take Screenshot</span>
+        </button>
+        <button class="submenuButton" onclick="hide('options-menu');show('guidelines-menu');">
+          <img src="./assets/images/menuImages/icon_info.png"></img>
+          <span>Other Guidelines</span>
+  </div>
+</div>
+
+<div id="guidelines-menu" class="instruction-popup hidden">
+  <div id="guidelines-content" class="instruction-popup-content screenMenu4" style="padding: 5vw 4vw;">
+
+    <button class="closeButton topLeftPosition" style="top:4vw; left: 4vw;" onclick="hide('guidelines-menu');show('options-menu');">
+      <img style="height:50%; width:50%;" src="./assets/images/menuImages/icon_close.png"></img>
+    </button>
+
+    <span id="submenuHeader1" class="instruction-popup-text" style="font-size: 5vw; font-weight: 600;">Other Guidelines</span>
+    <img id="imageIcon1" src="./assets/images/menuImages/icon_guideline_1.png">
+    <span id="image-info1" class="image-info">Check for overhead instructions</span>
+    <img id="imageIcon2" src="./assets/images/menuImages/icon_guideline_2.png">
+    <span id="image-info2" class="image-info">Having paved surface floor will be better</span>
+    <img id="imageIcon3" src="./assets/images/menuImages/icon_guideline_3.png">
+    <span id="image-info3" class="image-info">Anyother objects like flower pots, water sprinkler</span>
+
+  </div>
+</div>
+    
+
+  
+<!-- <div class="topLeftPosition">
+    <button id="podzilla_Button" class="screenbutton" style="padding: 8px 10px; font-size: 12px">
+        SHOW/HIDE
+    </button>
+</div> -->
+
+<script type="text/javascript">
+
+const redirect_link = 'https://www.pods.com/';
+
+function openExternalScreen()
+{
+  window.open(redirect_link);
+}
+
+function show(element)
+{
+  document.getElementById(element).classList.remove('hidden')
+}
+
+function hide(element)
+{
+  document.getElementById(element).classList.add('hidden')
+}
+
+function shareLink()
+{
+  if (navigator.share) {
+    navigator.share({
+        title: 'Share PODS AR APP',
+        text: 'Try out this PODS AR app!',
+        url: 'https://www.pods.com/',
+      })
+      .then(() => console.log('Successful share'))
+      .catch((error) => console.log('Error sharing', error));
+  } else {
+    console.log('Share not supported on this browser, do it the old way.');
+  }
+}
+</script>

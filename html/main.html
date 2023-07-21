@@ -1,0 +1,128 @@
+<div id="instructions-popup"></div>
+<div id="main-menu"></div>
+
+<script>
+  $("#instructions-popup").load("html/instructions-popup.html");
+  $("#main-menu").load("html/main-menu.html");
+</script>
+
+<a-scene
+  id="sceneID"
+  splash-screen
+  compatibility-check
+  menu-manager
+  screenshot-manager
+  coaching-overlay="disablePrompt: true"
+  landing-page
+  xrextras-gesture-detector
+  xrextras-loading="loadImage: #loadingImage;"
+  xrextras-runtime-error
+  gltf-model="dracoDecoderPath: https://cdn.8thwall.com/web/aframe/draco-decoder/"
+  renderer="colorManagement: true"
+  xrweb="scale: absolute"
+>
+  <a-assets>
+    <a-asset-item
+      id="containerModel"
+      src="./assets/glbModels/POD_8FT.glb"
+    ></a-asset-item>
+    <a-asset-item
+      id="containerModel1"
+      src="./assets/glbModels/POD_12FT.glb"
+    ></a-asset-item>
+    <a-asset-item
+      id="containerModel2"
+      src="./assets/glbModels/POD_16FT.glb"
+    ></a-asset-item>
+    <a-asset-item
+      id="plane"
+      src="./assets/glbModels/8ft_MarkingPlane_2ft.glb"
+    ></a-asset-item>
+    <a-asset-item
+      id="plane1"
+      src="./assets/glbModels/12ft_MarkingPlane_2ft.glb"
+    ></a-asset-item>
+    <a-asset-item
+      id="plane2"
+      src="./assets/glbModels/16ft_MarkingPlane_2ft.glb"
+    ></a-asset-item>
+    <a-asset-item
+      id="podzilla"
+      src="./assets/glbModels/PODZILLA_8FT.glb"
+    ></a-asset-item>
+
+    <img
+      id="loadingImage"
+      src="./assets/images/landingPageImages/icon_loadingCircle.png"
+    />
+  </a-assets>
+
+  <a-camera
+    id="camera"
+    position="0 1.75 4"
+    raycaster="objects: .cantap"
+    cursor="fuse: false; rayOrigin: mouse;"
+  >
+  </a-camera>
+
+  <a-entity
+    xr-light
+    light="type: directional;
+      castShadow: true;
+      shadowMapHeight:2048;
+      shadowMapWidth:2048;
+      shadowCameraTop: 20;
+      shadowCameraBottom: -20;
+      shadowCameraLeft: -20;
+      shadowCameraRight: 20;
+      target: #container;
+      shadowRadius: 3"
+    xrextras-attach="target: container; offset: 1 15 2;"
+    shadow
+  >
+  </a-entity>
+
+  <a-light xr-light="max: 0.5" type="ambient"> </a-light>
+
+  <a-entity
+    class="cantap"
+    id="container"
+    gltf-model="#containerModel"
+    xrextras-hold-drag="rise-height: 0.2"
+    xrextras-two-finger-rotate
+    shadow="receive: false"
+    visible="false"
+  >
+    <a-entity id="cage" gltf-model="#podzilla" visible="false"></a-entity>
+    <a-entity id="marker" gltf-model="#plane"></a-entity>
+  </a-entity>
+
+  <a-plane
+    id="ground"
+    rotation="-90 0 0"
+    width="1000"
+    height="1000"
+    material="shader: shadow"
+    shadow
+  >
+  </a-plane>
+
+  <xrextras-capture-button capture-mode="photo"></xrextras-capture-button>
+
+  <xrextras-capture-config
+    footer-image-url=""
+    watermark-image-url="assets/images/logos/PODS_favicon.png"
+    watermark-max-width="10"
+    watermark-max-height="10"
+    watermark-location="bottomRight"
+    file-name-prefix="my-pods-capture-"
+    request-mic="manual"
+    include-scene-audio="false"
+  ></xrextras-capture-config>
+
+  <xrextras-capture-preview
+    action-button-share-text="Share"
+    action-button-view-text="View"
+    finalize-text="Exporting..."
+  ></xrextras-capture-preview>
+</a-scene>

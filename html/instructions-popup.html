@@ -1,0 +1,96 @@
+<div id="instruction-panel" class="instruction-popup instruction-show">
+  <div id="instruction-panel-1" class="instruction-popup-content">
+      <div class="instruction-popup-close-header">
+          <img id="instruction-number" class="instruction-popup-close" src="./assets/images/menuImages/icon_one.png"></img>
+      </div>
+    <div class="instruction-popup-items">
+      <img id="instruction-icon" class="instruction-popup-icon" src="./assets/images/menuImages/icon_instruction_1.png"></img>
+      <div id="instruction-text" class="instruction-popup-text">
+          Select the PODS size
+      </div>
+      <div id="instruction-subtext" class="instruction-popup-subtext">
+      </div>
+          <img id="instruction-selected" class="instruction-circles-header" src="./assets/images/menuImages/icon_instructionSelected_1.png"></img>
+      <img id="instruction-button" class="instruction-popup-button" src="./assets/images/menuImages/icon_instruction_button_next.png" onclick="enableNextInstruction(0)">
+    </div>
+  </div>
+
+  <div id="instruction-panel-2" class="instruction-popup-content hidden">
+    <div class="instruction-popup-close-header">
+        <img id="instruction-number" class="instruction-popup-close" src="./assets/images/menuImages/icon_two.png"></img>
+    </div>
+  <div class="instruction-popup-items">
+    <img id="instruction-icon" class="instruction-popup-icon" src="./assets/images/menuImages/icon_instruction_2.png"></img>
+    <div id="instruction-text" class="instruction-popup-text">
+      Place it on the floor
+    </div>
+    <div id="instruction-subtext" class="instruction-popup-subtext">
+      Move 3-feet away from the<br>container placement
+    </div>
+        <img id="instruction-selected" class="instruction-circles-header" src="./assets/images/menuImages/icon_instructionSelected_2.png"></img>
+    <img id="instruction-button" class="instruction-popup-button" src="./assets/images/menuImages/icon_instruction_button_next.png" onclick="enableNextInstruction(1)">
+  </div>
+</div>
+
+<div id="instruction-panel-3" class="instruction-popup-content hidden">
+  <div class="instruction-popup-close-header">
+      <img id="instruction-number" class="instruction-popup-close" src="./assets/images/menuImages/icon_three.png"></img>
+  </div>
+<div class="instruction-popup-items">
+  <img id="instruction-icon" class="instruction-popup-icon" src="./assets/images/menuImages/icon_instruction_3.png"></img>
+  <div id="instruction-text" class="instruction-popup-text">
+    Voila! Check whether it fits your space
+  </div>
+  <div id="instruction-subtext" class="instruction-popup-subtext">
+  </div>
+      <img id="instruction-selected" class="instruction-circles-header" src="./assets/images/menuImages/icon_instructionSelected_3.png"></img>
+  <img id="instruction-button" class="instruction-popup-button" src="./assets/images/menuImages/icon_instruction_button_letsGo.png" onclick="enableNextInstruction(2)">
+</div>
+</div>
+</div>
+
+<script>
+function enableNextInstruction(idx) {
+      // const INSTRUCTION_SET = [
+      //   ['./assets/images/menuImages/icon_one.png', './assets/images/menuImages/icon_instruction_1.png', 'Select the PODS size', '', './assets/images/menuImages/icon_instructionSelected_1.png', './assets/images/menuImages/icon_instruction_button_next.png'],
+      //   ['./assets/images/menuImages/icon_two.png', './assets/images/menuImages/icon_instruction_2.png', ' \n Place it on the floor', 'Move 3-feet away from the<br>container placement', './assets/images/menuImages/icon_instructionSelected_2.png', './assets/images/menuImages/icon_instruction_button_next.png'],
+      //   ['./assets/images/menuImages/icon_three.png', './assets/images/menuImages/icon_instruction_3.png', 'Voila! Check whether it fits your space', '', './assets/images/menuImages/icon_instructionSelected_3.png', './assets/images/menuImages/icon_instruction_button_letsGo.png'],
+      // ]
+      // const button5 = document.getElementById('podzilla_Button')
+      // const instructionButton = document.getElementById('instruction-button')
+      const instructionPanel = document.getElementById('instruction-panel')
+      // const instructionElement1 = document.getElementById('instruction-number')
+      // const instructionElement2 = document.getElementById('instruction-icon')
+      // const instructionElement3 = document.getElementById('instruction-text')
+      // const instructionElement4 = document.getElementById('instruction-subtext')
+      // const instructionElement5 = document.getElementById('instruction-selected')
+      // const instructionElement6 = document.getElementById('instruction-button')
+      const instructionElement1 = document.getElementById('instruction-panel-1')
+      const instructionElement2 = document.getElementById('instruction-panel-2')
+      const instructionElement3 = document.getElementById('instruction-panel-3')
+
+  
+      // instructionButton.addEventListener('click', (event) => {
+        if (idx === 0) {
+          // idx = 1
+          instructionElement1.classList.add('hidden')
+          instructionElement2.classList.remove('hidden')
+        } else if (idx === 1) {
+          // idx = 2
+          instructionElement2.classList.add('hidden')
+          instructionElement3.classList.remove('hidden')
+        } else if (idx === 2) {
+          instructionPanel.classList.remove('instruction-show')
+          instructionPanel.classList.add('instruction-hide')
+          document.getElementById('container-menu').classList.remove('hidden')
+        }
+  
+        // instructionElement1.src = INSTRUCTION_SET[idx][0]
+        // instructionElement2.src = INSTRUCTION_SET[idx][1]
+        // instructionElement3.innerHTML = INSTRUCTION_SET[idx][2]
+        // instructionElement4.innerHTML = INSTRUCTION_SET[idx][3]
+        // instructionElement5.src = INSTRUCTION_SET[idx][4]
+        // instructionElement6.src = INSTRUCTION_SET[idx][5]
+      // })
+}
+</script>

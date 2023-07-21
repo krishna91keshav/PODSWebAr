@@ -1,0 +1,128 @@
+@font-face {
+  font-family: Nunito Sans;
+  src: url(/assets/fonts/NunitoSans.ttf);
+}
+@font-face {
+  font-family: Roboto Mono;
+  src: url(/assets/fonts/RobotoMono.ttf);
+}
+
+.instruction-popup {
+  position: fixed;
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+.instruction-show {
+  display: block;
+}
+.instruction-hide {
+  display: none;
+}
+.instruction-popup-content {
+  position: fixed;
+  padding: 3vw;
+  width: 70vw;
+  height: 80vw;
+  border-radius: 8vw;
+  background: linear-gradient(
+    137deg,
+    rgba(58, 58, 58, 0.37) 0%,
+    rgba(3, 3, 3, 0.42) 95%
+  );
+  box-shadow: 0px 0.3px 8px -0.3px rgba(0, 0, 0, 0.18),
+    0px 0.7px 2px 0px rgba(255, 255, 255, 0.25) inset;
+  backdrop-filter: blur(17px);
+  left: 50%;
+  top: 40%;
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.instruction-popup-close-header {
+  text-align: left;
+  position: absolute;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.instruction-popup-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+}
+
+.instruction-popup-close {
+  width: 9vw;
+  height: 9vw;
+}
+.instruction-popup-text {
+  text-align: center;
+  color: #fff;
+  font-size: 4.5vw;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 6vw;
+  /* left: 5%;
+  right: 5%;
+  top: 45%;
+  position: absolute; */
+}
+.instruction-popup-subtext {
+  text-align: center;
+  color: #fff;
+  font-size: 3.5vw;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+  /* left: 5%;
+  right: 5%;
+  top: 55%;
+  position: absolute; */
+}
+.instruction-popup-icon {
+  width: 20vw;
+  height: 20vw;
+  /* object-fit: scale-down;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 25%;
+  left: 50%; */
+}
+.instruction-circles-header {
+  /* bottom: 25%;
+  left: 45%;
+  position: absolute; */
+  height: 2vw;
+  width: 10vw;
+}
+.instruction-largeCircle {
+  height: 2vw;
+  width: 2vw;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.instruction-smallCircle {
+  height: 1vw;
+  width: 1vw;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+.instruction-popup-button {
+  /* bottom: 8%;
+  left: 20%;
+  position: absolute; */
+  height: 9vw;
+  width: 45vw;
+}
